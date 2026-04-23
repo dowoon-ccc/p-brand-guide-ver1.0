@@ -14,15 +14,15 @@
   --warm-white:#FAF7F2;--beige:#E8DFD0;--stone:#6B6862;
   --white:#ffffff;
 }
-html,body{width:1920px;height:1080px;overflow:hidden;background:#111}
-.deck{width:1920px;height:1080px;position:relative}
+html,body{width:1920px;height:auto;overflow-x:hidden;overflow-y:scroll;scroll-behavior:smooth;background:#111;scroll-snap-type:y mandatory;}
+.deck{width:1920px;}
 .slide{
-  display:none;position:absolute;inset:0;
+  display:flex;position:relative;
   width:1920px;height:1080px;
   font-family:'SUIT',sans-serif;
   overflow:hidden;
+  scroll-snap-align:start;
 }
-.slide.active{display:flex}
 
 /* NAV */
 .nav{
@@ -1253,22 +1253,41 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#111}
 </nav>
 
 <script>
-let c=1,t=17;
-function show(n){
-  if(n<1||n>t)return;
-  document.querySelector('#s'+c).classList.remove('active');
-  c=n;
-  document.querySelector('#s'+c).classList.add('active');
-  document.getElementById('pg').textContent=c+' / '+t;
-  document.getElementById('pb').style.width=(c/t*100)+'%';
+const slides = Array.from(document.querySelectorAll('.slide'));
+const total = slides.length;
+let current = 0;
+
+function updateNav(idx) {
+  current = idx;
+  document.getElementById('pg').textContent = (idx+1) + ' / ' + total;
+  document.getElementById('pb').style.width = ((idx+1)/total*100) + '%';
 }
-function next(){if(c<t)show(c+1);}
-function prev(){if(c>1)show(c-1);}
-document.addEventListener('keydown',e=>{
-  if(e.key==='ArrowRight'||e.key==='ArrowDown')next();
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();
+
+function scrollToSlide(idx) {
+  if (idx < 0 || idx >= total) return;
+  slides[idx].scrollIntoView({ behavior: 'smooth' });
+}
+
+function next() { scrollToSlide(current + 1); }
+function prev() { scrollToSlide(current - 1); }
+
+// Track current slide via IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+      updateNav(slides.indexOf(entry.target));
+    }
+  });
+}, { threshold: 0.5 });
+
+slides.forEach(slide => observer.observe(slide));
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next();
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   prev();
 });
-show(1);
+
+updateNav(0);
 </script>
 </body>
 </html>
