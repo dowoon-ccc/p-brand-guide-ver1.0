@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920">
+<title>페가수스인터넷상사 Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SUIT:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sky:#4A90E2;--sky-light:rgba(74,144,226,0.12);--sky-mid:rgba(74,144,226,0.25);
+  --gold:#D4AF37;--navy:#1A2B3C;--charcoal:#1A1A1A;
+  --warm-white:#FAF7F2;--beige:#E8DFD0;--stone:#6B6862;
+  --white:#ffffff;
+}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#111}
+.deck{width:1920px;height:1080px;position:relative}
+.slide{
+  display:none;position:absolute;inset:0;
+  width:1920px;height:1080px;
+  font-family:'SUIT',sans-serif;
+  overflow:hidden;
+}
+.slide.active{display:flex}
+
+/* NAV */
+.nav{
+  position:fixed;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:20px;z-index:999;
+  background:rgba(26,43,60,0.85);backdrop-filter:blur(8px);
+  border:1px solid rgba(74,144,226,0.3);border-radius:40px;
+  padding:10px 24px;
+}
+.nav button{
+  background:none;border:none;color:rgba(255,255,255,0.6);
+  font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:2px;
+  cursor:pointer;padding:4px 12px;border-radius:20px;transition:all .2s;
+}
+.nav button:hover{color:#fff;background:rgba(74,144,226,0.3)}
+.pager{color:rgba(255,255,255,0.5);font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:2px;min-width:60px;text-align:center}
+.progress{height:2px;background:rgba(74,144,226,0.2);border-radius:1px;position:fixed;bottom:0;left:0;width:100%;z-index:998}
+.progress-bar{height:100%;background:var(--sky);border-radius:1px;transition:width .3s ease}
+
+/* SHARED COMPONENTS */
+.eyebrow{
+  font-family:'Roboto Mono',monospace;font-size:12px;font-weight:500;
+  color:var(--sky);letter-spacing:5px;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.sky-rule{width:64px;height:3px;background:var(--sky);border-radius:2px;margin-bottom:28px}
+.slide-title{font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:var(--charcoal)}
+.slide-title.light{color:var(--white)}
+.sub{font-size:32px;font-weight:700;color:var(--charcoal);line-height:1.2}
+.sub.light{color:var(--white)}
+.body-text{font-size:19px;font-weight:400;color:var(--stone);line-height:1.7}
+.meta{font-family:'Roboto Mono',monospace;font-size:13px;color:var(--stone);letter-spacing:1px}
+.label{font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sky)}
+.section-num{
+  font-family:'Roboto Mono',monospace;font-size:200px;font-weight:700;
+  color:var(--sky-light);position:absolute;right:-20px;top:-60px;
+  line-height:1;pointer-events:none;user-select:none;
+}
+
+/* SLIDE 1 — COVER */
+#s1{
+  background:var(--navy);
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+#s1 .cover-logo{width:320px;height:320px;object-fit:contain;margin-bottom:60px;filter:brightness(0) invert(1)}
+#s1 .cover-title{
+  font-size:80px;font-weight:900;color:var(--white);
+  letter-spacing:-2px;text-align:center;line-height:1.05;margin-bottom:20px;
+}
+#s1 .cover-title span{color:var(--sky)}
+#s1 .cover-sub{
+  font-family:'Roboto Mono',monospace;font-size:15px;color:rgba(255,255,255,0.45);
+  letter-spacing:6px;text-transform:uppercase;text-align:center;margin-bottom:80px;
+}
+#s1 .cover-tags{display:flex;gap:24px}
+#s1 .cover-tag{
+  font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:3px;
+  color:rgba(255,255,255,0.35);padding:8px 20px;
+  border:1px solid rgba(255,255,255,0.15);border-radius:20px;text-transform:uppercase;
+}
+#s1 .cover-rule{width:1px;height:120px;background:rgba(74,144,226,0.4);position:absolute;left:80px;top:50%;transform:translateY(-50%)}
+#s1 .cover-rule-r{width:1px;height:120px;background:rgba(74,144,226,0.4);position:absolute;right:80px;top:50%;transform:translateY(-50%)}
+#s1 .cover-index{
+  position:absolute;right:80px;bottom:60px;
+  display:flex;flex-direction:column;gap:8px;text-align:right;
+}
+#s1 .cover-index-item{font-family:'Roboto Mono',monospace;font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:2px}
+#s1 .cover-index-item span{color:var(--sky);margin-right:8px}
+
+/* SLIDE 2 — LOGO OVERVIEW */
+#s2{background:var(--warm-white);flex-direction:column;padding:60px 80px}
+#s2 .header{margin-bottom:48px}
+#s2 .logo-grid{
+  flex:1;display:grid;grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);gap:2px;
+}
+#s2 .logo-cell{
+  background:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:32px;
+  position:relative;
+}
+#s2 .logo-cell img{max-height:180px;max-width:80%;object-fit:contain}
+#s2 .logo-cell .meta{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);white-space:nowrap}
+
+/* SLIDE 3 — ANATOMY */
+#s3{background:#fff;padding:60px 80px}
+#s3 .left{flex:1;display:flex;align-items:center;justify-content:center;position:relative}
+#s3 .left img{width:620px;height:auto;object-fit:contain}
+#s3 .right{width:560px;display:flex;flex-direction:column;justify-content:center;gap:0;padding-left:60px}
+#s3 .anatomy-item{
+  padding:28px 0;border-bottom:1px solid var(--beige);
+}
+#s3 .anatomy-item:last-child{border-bottom:none}
+#s3 .anatomy-num{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--sky);letter-spacing:3px;margin-bottom:8px}
+#s3 .anatomy-name{font-size:28px;font-weight:700;color:var(--charcoal);margin-bottom:6px}
+#s3 .anatomy-desc{font-size:16px;color:var(--stone);line-height:1.6}
+
+/* SLIDE 4 — PRIMARY LOGOS */
+#s4{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s4 .primary-row{flex:1;display:flex;gap:4px}
+#s4 .primary-cell{
+  flex:1;background:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;padding:48px;
+}
+#s4 .primary-cell img{height:240px;width:auto;object-fit:contain;margin-bottom:40px}
+#s4 .clearspace{
+  position:relative;display:inline-flex;
+  border:1.5px dashed rgba(74,144,226,0.4);
+  padding:32px;
+}
+#s4 .clearspace img{height:200px;width:auto}
+#s4 .cs-label{
+  position:absolute;font-family:'Roboto Mono',monospace;font-size:10px;
+  color:var(--sky);letter-spacing:2px;
+}
+#s4 .cs-label.top{top:-20px;left:50%;transform:translateX(-50%)}
+#s4 .cs-label.side{right:-40px;top:50%;transform:translateY(-50%) rotate(90deg)}
+
+/* SLIDE 5 — VARIANTS */
+#s5{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s5 .var-grid{flex:1;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:4px}
+#s5 .var-cell{background:#fff;display:flex;align-items:center;justify-content:center;position:relative;padding:40px}
+#s5 .var-cell.dark{background:var(--navy)}
+#s5 .var-cell img{max-height:220px;max-width:70%;object-fit:contain}
+#s5 .var-cell .meta{position:absolute;bottom:20px;left:32px}
+#s5 .var-cell.dark .meta{color:rgba(255,255,255,0.4)}
+#s5 .var-cell .var-num{
+  position:absolute;top:20px;right:24px;
+  font-family:'Roboto Mono',monospace;font-size:11px;
+  color:var(--sky);letter-spacing:2px;
+}
+
+/* SLIDE 6 — COLOR VERSIONS + BACKGROUNDS */
+#s6{background:var(--charcoal);flex-direction:column;padding:60px 80px}
+#s6 .top-section{margin-bottom:4px}
+#s6 .color-ver-row{display:flex;gap:4px;height:360px}
+#s6 .cv-cell{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  position:relative;padding:32px;
+}
+#s6 .cv-cell.white-bg{background:#fff}
+#s6 .cv-cell.sky-bg{background:var(--sky)}
+#s6 .cv-cell.navy-bg{background:var(--navy)}
+#s6 .cv-cell.black-bg{background:#111}
+#s6 .cv-cell.beige-bg{background:var(--beige)}
+#s6 .cv-cell.warm-bg{background:var(--warm-white)}
+#s6 .cv-cell img{height:140px;width:auto;object-fit:contain;margin-bottom:16px}
+#s6 .cv-label{
+  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:2px;
+  white-space:nowrap;
+}
+#s6 .bg-row{display:flex;gap:4px;flex:1}
+#s6 .bg-cell{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;position:relative}
+#s6 .bg-cell img{height:120px;width:auto;object-fit:contain}
+
+/* SLIDE 7 — SLOGAN LOCKUP */
+#s7{background:var(--navy);padding:60px 80px;flex-direction:column}
+#s7 .lockup-row{flex:1;display:flex;gap:4px}
+#s7 .lockup-cell{
+  flex:1;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  position:relative;padding:48px;gap:32px;
+}
+#s7 .lockup-cell img{height:120px;width:auto;object-fit:contain;filter:brightness(0) invert(1)}
+#s7 .lockup-slogan{
+  font-size:20px;font-weight:600;color:rgba(255,255,255,0.7);
+  letter-spacing:2px;text-align:center;line-height:1.6;
+}
+#s7 .lockup-rule{width:1px;height:40px;background:rgba(74,144,226,0.4)}
+#s7 .lockup-ver{
+  font-size:13px;color:rgba(255,255,255,0.35);
+  font-family:'Roboto Mono',monospace;letter-spacing:3px;
+  position:absolute;top:24px;left:32px;
+}
+
+/* SLIDE 8 — DON'TS */
+#s8{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s8 .dont-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:4px}
+#s8 .dont-cell{
+  background:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:40px;
+  position:relative;overflow:hidden;
+}
+#s8 .dont-cell img{height:140px;width:auto;object-fit:contain;margin-bottom:20px}
+#s8 .dont-cell .x-mark{
+  position:absolute;top:16px;right:16px;
+  width:28px;height:28px;background:#E53935;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:14px;font-weight:700;
+}
+#s8 .dont-cell .dont-rule{font-size:16px;color:var(--stone);text-align:center;line-height:1.5}
+#s8 .dont-cell .dont-title{font-size:20px;font-weight:700;color:var(--charcoal);margin-bottom:8px;text-align:center}
+
+/* SLIDE 9 — BRAND FOUNDATION */
+#s9{background:var(--navy);padding:60px 80px;flex-direction:column}
+#s9 .foundation-hero{
+  font-size:80px;font-weight:900;color:var(--white);
+  line-height:1.05;letter-spacing:-2px;margin-bottom:64px;
+  max-width:1100px;
+}
+#s9 .foundation-hero em{color:var(--sky);font-style:normal}
+#s9 .pillars{display:flex;gap:4px;flex:1}
+#s9 .pillar{
+  flex:1;background:rgba(255,255,255,0.06);
+  border-top:3px solid var(--sky);
+  padding:48px 40px;display:flex;flex-direction:column;
+}
+#s9 .pillar-num{font-family:'Roboto Mono',monospace;font-size:48px;font-weight:700;color:var(--sky);opacity:0.3;margin-bottom:16px;line-height:1}
+#s9 .pillar-title{font-size:36px;font-weight:800;color:var(--white);margin-bottom:20px;line-height:1.1}
+#s9 .pillar-body{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75}
+
+/* SLIDE 10 — CHARACTERS */
+#s10{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s10 .char-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+#s10 .char-card{
+  background:#fff;display:flex;flex-direction:column;
+  border-top:4px solid var(--sky);overflow:hidden;
+}
+#s10 .char-card-top{
+  flex:1;display:flex;align-items:center;justify-content:center;
+  background:var(--sky-light);padding:48px;
+}
+#s10 .char-avatar{
+  width:180px;height:180px;border-radius:50%;
+  background:var(--sky);display:flex;align-items:center;justify-content:center;
+  font-size:72px;
+}
+#s10 .char-card-bottom{padding:32px 36px}
+#s10 .char-title-kr{font-size:13px;color:var(--stone);font-family:'Roboto Mono',monospace;letter-spacing:3px;margin-bottom:4px}
+#s10 .char-name{font-size:36px;font-weight:800;color:var(--charcoal);margin-bottom:4px}
+#s10 .char-name-cn{font-size:16px;color:var(--stone);margin-bottom:20px;letter-spacing:2px}
+#s10 .char-tags{display:flex;flex-wrap:wrap;gap:8px}
+#s10 .char-tag{
+  background:var(--sky-light);color:var(--sky);
+  font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;
+}
+
+/* SLIDE 11 — BRAND VOICE */
+#s11{background:var(--charcoal);padding:60px 80px;flex-direction:column}
+#s11 .voice-keywords{
+  display:flex;flex-wrap:wrap;gap:16px;margin-bottom:48px;flex:1;
+  align-content:center;
+}
+#s11 .vk{
+  font-size:68px;font-weight:900;color:rgba(255,255,255,0.08);
+  line-height:1;letter-spacing:-1px;cursor:default;
+  transition:color .2s;
+}
+#s11 .vk:nth-child(1){font-size:96px;color:var(--white)}
+#s11 .vk:nth-child(2){font-size:80px;color:rgba(255,255,255,0.7)}
+#s11 .vk:nth-child(3){font-size:72px;color:rgba(255,255,255,0.5)}
+#s11 .vk:nth-child(4){font-size:68px;color:rgba(74,144,226,0.7)}
+#s11 .vk:nth-child(5){font-size:64px;color:rgba(255,255,255,0.35)}
+#s11 .vk:nth-child(6){font-size:72px;color:rgba(74,144,226,0.5)}
+#s11 .vk:nth-child(7){font-size:60px;color:rgba(255,255,255,0.25)}
+#s11 .vk:nth-child(8){font-size:64px;color:rgba(255,255,255,0.4)}
+#s11 .do-dont{display:flex;gap:4px;height:260px}
+#s11 .do-box{
+  flex:1;padding:32px 36px;border-top:3px solid;
+}
+#s11 .do-box.do{background:rgba(74,144,226,0.1);border-color:var(--sky)}
+#s11 .do-box.dont{background:rgba(229,57,53,0.08);border-color:#E53935}
+#s11 .do-label{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:4px;margin-bottom:16px}
+#s11 .do-box.do .do-label{color:var(--sky)}
+#s11 .do-box.dont .do-label{color:#E53935}
+#s11 .do-items{display:flex;flex-wrap:wrap;gap:10px}
+#s11 .do-item{
+  font-size:17px;color:rgba(255,255,255,0.75);
+  padding:8px 16px;background:rgba(255,255,255,0.06);
+  border-radius:4px;line-height:1.4;
+}
+
+/* SLIDE 12 — SLOGANS */
+#s12{background:var(--navy);padding:60px 80px;flex-direction:column;justify-content:center}
+#s12 .slogan-main{
+  font-size:112px;font-weight:900;color:var(--white);
+  letter-spacing:-3px;line-height:1;margin-bottom:32px;
+}
+#s12 .slogan-main span{color:var(--sky)}
+#s12 .slogan-sub{
+  font-size:48px;font-weight:600;color:rgba(255,255,255,0.5);
+  letter-spacing:-1px;margin-bottom:72px;
+}
+#s12 .copy-grid{display:flex;gap:4px;height:260px}
+#s12 .copy-cell{
+  flex:1;background:rgba(255,255,255,0.05);
+  border-left:3px solid var(--sky);
+  padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between;
+}
+#s12 .copy-context{font-family:'Roboto Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:3px;text-transform:uppercase}
+#s12 .copy-text{font-size:22px;font-weight:600;color:var(--white);line-height:1.4}
+
+/* SLIDE 13 — COLOR SYSTEM */
+#s13{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s13 .swatch-row{flex:1;display:flex;gap:4px}
+#s13 .swatch-main{flex:2.5;display:flex;flex-direction:column;border-radius:0}
+#s13 .swatch-block{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;position:relative;overflow:hidden}
+#s13 .swatch-block.sky{background:var(--sky)}
+#s13 .swatch-block.gold{background:var(--gold)}
+#s13 .swatch-block.navy{background:var(--navy)}
+#s13 .swatch-block.warm{background:var(--warm-white);border:1px solid var(--beige)}
+#s13 .swatch-block.beige{background:var(--beige)}
+#s13 .swatch-block.charcoal{background:var(--charcoal)}
+#s13 .swatch-name{font-size:28px;font-weight:800;color:#fff;margin-bottom:4px}
+#s13 .swatch-name.dark{color:var(--charcoal)}
+#s13 .swatch-hex{font-family:'Roboto Mono',monospace;font-size:15px;color:rgba(255,255,255,0.7);letter-spacing:1px}
+#s13 .swatch-hex.dark{color:var(--stone)}
+#s13 .swatch-role{
+  position:absolute;top:24px;left:24px;
+  font-family:'Roboto Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  background:rgba(255,255,255,0.15);color:#fff;padding:4px 10px;border-radius:12px;
+}
+#s13 .swatch-role.dark{background:rgba(0,0,0,0.08);color:var(--stone)}
+#s13 .swatch-side{flex:1;display:flex;flex-direction:column;gap:4px}
+#s13 .usage-bar{
+  flex:1;padding:32px 36px;display:flex;flex-direction:column;
+  justify-content:center;gap:12px;background:#fff;
+}
+#s13 .usage-label{font-size:15px;font-weight:600;color:var(--charcoal)}
+#s13 .usage-track{height:8px;background:var(--beige);border-radius:4px;overflow:hidden}
+#s13 .usage-fill{height:100%;border-radius:4px;background:var(--sky)}
+
+/* SLIDE 14 — TYPOGRAPHY */
+#s14{background:#fff;padding:60px 80px;flex-direction:column}
+#s14 .type-layout{flex:1;display:flex;gap:4px}
+#s14 .type-col{flex:1;display:flex;flex-direction:column;gap:4px}
+#s14 .type-specimen{
+  background:var(--warm-white);flex:1;padding:36px 40px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
+}
+#s14 .type-specimen.dark{background:var(--charcoal)}
+#s14 .type-big{
+  font-size:96px;font-weight:900;color:var(--charcoal);
+  line-height:0.95;letter-spacing:-3px;
+}
+#s14 .type-big.light{color:var(--white)}
+#s14 .type-sample-kr{font-size:56px;font-weight:700;color:var(--charcoal);line-height:1.1}
+#s14 .type-sample-kr.light{color:var(--white)}
+#s14 .type-meta{display:flex;gap:16px;align-items:center}
+#s14 .type-scale{flex:1;background:var(--sky-light);padding:36px 40px}
+#s14 .scale-row{
+  display:flex;align-items:baseline;gap:24px;
+  padding:14px 0;border-bottom:1px solid rgba(74,144,226,0.15);
+}
+#s14 .scale-row:last-child{border-bottom:none}
+#s14 .scale-size{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--sky);letter-spacing:2px;min-width:80px}
+#s14 .scale-sample{font-weight:700;color:var(--charcoal);line-height:1}
+#s14 .scale-use{font-size:12px;color:var(--stone);margin-left:auto;font-family:'Roboto Mono',monospace;letter-spacing:1px}
+
+/* SLIDE 15 — GRID + COMPONENTS */
+#s15{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s15 .layout-row{flex:1;display:flex;gap:4px}
+#s15 .grid-vis{flex:1.4;background:#fff;padding:40px;position:relative;overflow:hidden}
+#s15 .grid-col{
+  position:absolute;top:40px;bottom:40px;
+  background:rgba(74,144,226,0.07);border:1px solid rgba(74,144,226,0.2);
+}
+#s15 .comp-col{flex:1;display:flex;flex-direction:column;gap:4px;padding:0}
+#s15 .comp-section{flex:1;background:#fff;padding:32px 36px}
+#s15 .comp-title{font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:20px}
+#s15 .comp-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.btn-primary{background:var(--sky);color:#fff;font-size:15px;font-weight:600;padding:12px 28px;border-radius:4px;display:inline-flex;align-items:center;gap:8px}
+.btn-outline{border:2px solid var(--sky);color:var(--sky);font-size:15px;font-weight:600;padding:10px 26px;border-radius:4px;display:inline-flex;align-items:center;gap:8px}
+.btn-text{color:var(--sky);font-size:15px;font-weight:600;padding:10px 8px;display:inline-flex;align-items:center;gap:8px}
+.tag-item{background:var(--sky-light);color:var(--sky);font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px}
+.card-ex{background:var(--warm-white);border-radius:4px;overflow:hidden;width:180px}
+.card-ex-img{height:90px;background:var(--sky-light);display:flex;align-items:center;justify-content:center;font-size:28px}
+.card-ex-body{padding:12px;font-size:13px;color:var(--charcoal)}
+
+/* SLIDE 16 — CHANNELS */
+#s16{background:var(--charcoal);padding:60px 80px;flex-direction:column}
+#s16 .channel-grid{flex:1;display:flex;gap:4px}
+#s16 .ch-cell{
+  flex:1;display:flex;flex-direction:column;
+  padding:48px 40px;position:relative;overflow:hidden;
+}
+#s16 .ch-cell.web{background:rgba(74,144,226,0.12);border-top:3px solid var(--sky)}
+#s16 .ch-cell.curate{background:rgba(212,175,55,0.1);border-top:3px solid var(--gold)}
+#s16 .ch-cell.social{background:rgba(255,255,255,0.06);border-top:3px solid rgba(255,255,255,0.3)}
+#s16 .ch-icon{font-size:56px;margin-bottom:32px}
+#s16 .ch-name{font-size:36px;font-weight:800;color:var(--white);margin-bottom:16px}
+#s16 .ch-desc{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:28px}
+#s16 .ch-rules{display:flex;flex-direction:column;gap:10px}
+#s16 .ch-rule-item{
+  font-size:15px;color:rgba(255,255,255,0.5);padding:10px 16px;
+  background:rgba(255,255,255,0.05);border-left:2px solid var(--sky);
+  line-height:1.4;
+}
+#s16 .ch-cell.curate .ch-rule-item{border-left-color:var(--gold)}
+
+/* SLIDE 17 — REFERENCES */
+#s17{background:var(--warm-white);padding:60px 80px;flex-direction:column}
+#s17 .ref-grid{flex:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:4px}
+#s17 .ref-card{background:#fff;display:flex;flex-direction:column;overflow:hidden;position:relative}
+#s17 .ref-img{flex:1;background:var(--beige);display:flex;align-items:center;justify-content:center;min-height:200px}
+#s17 .ref-img-text{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--stone);letter-spacing:2px}
+#s17 .ref-body{padding:20px 24px;border-top:3px solid var(--sky)}
+#s17 .ref-source{font-family:'Roboto Mono',monospace;font-size:10px;color:var(--sky);letter-spacing:3px;margin-bottom:8px;text-transform:uppercase}
+#s17 .ref-keywords{display:flex;flex-wrap:wrap;gap:6px}
+#s17 .ref-kw{font-size:13px;color:var(--stone);background:var(--sky-light);padding:4px 10px;border-radius:12px;color:var(--sky);font-weight:600}
+
+</style>
+</head>
+<body>
+<div class="progress"><div class="progress-bar" id="pb"></div></div>
+<div class="deck">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S1 COVER -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide active" id="s1">
+  <div class="cover-rule"></div>
+  <div class="cover-rule-r"></div>
+  <img class="cover-logo" src="01.png" alt="Pegasus Logo">
+  <div class="cover-title">페가수스<br><span>인터넷상사</span></div>
+  <div class="cover-sub">Brand &amp; Logo Guidelines</div>
+  <div class="cover-tags">
+    <div class="cover-tag">Logo System</div>
+    <div class="cover-tag">Brand Identity</div>
+    <div class="cover-tag">Visual Language</div>
+  </div>
+  <div class="cover-index">
+    <div class="cover-index-item"><span>01–08</span>Logo Guide</div>
+    <div class="cover-index-item"><span>09–17</span>Brand Guide</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S2 LOGO OVERVIEW -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s2">
+  <div class="header">
+    <div class="eyebrow">01 — Logo System</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">로고 시스템 개요</div>
+  </div>
+  <div class="logo-grid">
+    <div class="logo-cell"><img src="01.png" alt="Logo 01"><span class="meta">01 — Primary (Horizontal)</span></div>
+    <div class="logo-cell"><img src="02.png" alt="Logo 02"><span class="meta">02 — Primary (Stacked)</span></div>
+    <div class="logo-cell"><img src="03.png" alt="Logo 03"><span class="meta">03 — Symbol Only</span></div>
+    <div class="logo-cell" style="background:var(--navy)"><img src="04.png" alt="Logo 04" style="filter:brightness(0) invert(1)"><span class="meta" style="color:rgba(255,255,255,0.4)">04 — Reversed</span></div>
+    <div class="logo-cell"><img src="05.png" alt="Logo 05"><span class="meta">05 — Horizontal Alt</span></div>
+    <div class="logo-cell" style="background:var(--sky)"><img src="06.png" alt="Logo 06" style="filter:brightness(0) invert(1)"><span class="meta" style="color:rgba(255,255,255,0.6)">06 — Sky Blue Ver.</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S3 ANATOMY -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s3" style="flex-direction:row">
+  <div class="left">
+    <img src="01.png" alt="Logo Anatomy" style="width:680px;filter:drop-shadow(0 8px 40px rgba(0,0,0,0.1))">
+  </div>
+  <div class="right">
+    <div class="eyebrow">02 — Anatomy</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title" style="font-size:56px;margin-bottom:40px">로고 구조</div>
+    <div class="anatomy-item">
+      <div class="anatomy-num">01 — SYMBOL</div>
+      <div class="anatomy-name">페가수스 별</div>
+      <div class="anatomy-desc">브랜드의 핵심 마크. 독립적으로 사용 가능한 심볼로, 공간이 제한된 환경에서 로고타입 없이 단독 사용이 허용됩니다.</div>
+    </div>
+    <div class="anatomy-item">
+      <div class="anatomy-num">02 — LOGOTYPE</div>
+      <div class="anatomy-name">페가수스인터넷상사</div>
+      <div class="anatomy-desc">SUIT 폰트 기반의 한국어 로고타입. 자간과 자형이 브랜드에 맞게 커스터마이징되었습니다.</div>
+    </div>
+    <div class="anatomy-item">
+      <div class="anatomy-num">03 — CLEARSPACE</div>
+      <div class="anatomy-name">여백 규정</div>
+      <div class="anatomy-desc">로고 주변에는 심볼 높이(X)의 최소 50%에 해당하는 여백을 확보해야 합니다. 이 영역 안에 다른 요소가 침범해서는 안 됩니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S4 PRIMARY LOGOS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s4" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow">03 — Primary Logos</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">기본형 로고</div>
+  </div>
+  <div class="primary-row">
+    <div class="primary-cell">
+      <div class="label" style="position:absolute;top:32px;left:40px">HORIZONTAL — 01.png</div>
+      <div class="clearspace">
+        <img src="01.png" alt="Logo 01">
+        <span class="cs-label top">← X →</span>
+        <span class="cs-label side">0.5X</span>
+      </div>
+      <div style="margin-top:28px;text-align:center">
+        <div style="font-size:20px;font-weight:700;color:var(--charcoal);margin-bottom:8px">가로형 (기본)</div>
+        <div style="font-size:16px;color:var(--stone)">최소 사용 사이즈 120px / 인쇄 30mm</div>
+      </div>
+    </div>
+    <div class="primary-cell" style="background:var(--navy)">
+      <div class="label" style="position:absolute;top:32px;left:40px;color:rgba(255,255,255,0.4)">STACKED — 02.png</div>
+      <div class="clearspace" style="border-color:rgba(74,144,226,0.3)">
+        <img src="02.png" alt="Logo 02" style="filter:brightness(0) invert(1)">
+        <span class="cs-label top" style="color:rgba(74,144,226,0.8)">← X →</span>
+        <span class="cs-label side" style="color:rgba(74,144,226,0.8)">0.5X</span>
+      </div>
+      <div style="margin-top:28px;text-align:center">
+        <div style="font-size:20px;font-weight:700;color:var(--white);margin-bottom:8px">세로형 (스택)</div>
+        <div style="font-size:16px;color:rgba(255,255,255,0.4)">정방형 공간, SNS 프로필, 각인</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S5 VARIANTS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s5" style="flex-direction:column">
+  <div style="margin-bottom:36px">
+    <div class="eyebrow">04 — Variants</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">로고 변형 시스템</div>
+  </div>
+  <div class="var-grid">
+    <div class="var-cell">
+      <img src="03.png" alt="Logo 03">
+      <span class="var-num">03</span>
+      <span class="meta" style="position:absolute;bottom:20px;left:32px">심볼 단독 / Symbol Only</span>
+    </div>
+    <div class="var-cell dark">
+      <img src="04.png" alt="Logo 04" style="filter:brightness(0) invert(1)">
+      <span class="var-num">04</span>
+      <span class="meta" style="position:absolute;bottom:20px;left:32px;color:rgba(255,255,255,0.4)">역상형 / Reversed</span>
+    </div>
+    <div class="var-cell" style="background:var(--beige)">
+      <img src="05.png" alt="Logo 05">
+      <span class="var-num">05</span>
+      <span class="meta" style="position:absolute;bottom:20px;left:32px">가로형 대안 / Horizontal Alt</span>
+    </div>
+    <div class="var-cell" style="background:var(--sky)">
+      <img src="06.png" alt="Logo 06" style="filter:brightness(0) invert(1)">
+      <span class="var-num">06</span>
+      <span class="meta" style="position:absolute;bottom:20px;left:32px;color:rgba(255,255,255,0.7)">스카이블루 버전 / Sky Blue</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S6 COLOR VERSIONS + BACKGROUNDS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s6" style="flex-direction:column">
+  <div style="margin-bottom:24px">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">05 — Color Versions</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title light">컬러 버전 &amp; 배경 적용</div>
+  </div>
+  <div class="color-ver-row" style="margin-bottom:4px">
+    <div class="cv-cell white-bg"><img src="01.png" alt=""><div class="cv-label" style="color:var(--stone)">White BG</div></div>
+    <div class="cv-cell sky-bg"><img src="01.png" alt="" style="filter:brightness(0) invert(1)"><div class="cv-label" style="color:rgba(255,255,255,0.7)">Sky Blue BG</div></div>
+    <div class="cv-cell navy-bg"><img src="01.png" alt="" style="filter:brightness(0) invert(1)"><div class="cv-label" style="color:rgba(255,255,255,0.4)">Deep Navy BG</div></div>
+    <div class="cv-cell black-bg"><img src="01.png" alt="" style="filter:brightness(0) invert(1)"><div class="cv-label" style="color:rgba(255,255,255,0.35)">Black BG</div></div>
+    <div class="cv-cell warm-bg"><img src="01.png" alt=""><div class="cv-label" style="color:var(--stone)">Warm White BG</div></div>
+  </div>
+  <div class="bg-row">
+    <div class="bg-cell" style="background:#fff;border-top:2px solid var(--sky)"><img src="03.png" alt=""><div style="font-family:'Roboto Mono',monospace;font-size:10px;color:var(--stone);letter-spacing:2px;margin-top:12px">SYMBOL / WHITE</div></div>
+    <div class="bg-cell" style="background:var(--warm-white);border-top:2px solid var(--sky)"><img src="03.png" alt=""><div style="font-family:'Roboto Mono',monospace;font-size:10px;color:var(--stone);letter-spacing:2px;margin-top:12px">SYMBOL / WARM</div></div>
+    <div class="bg-cell" style="background:var(--sky);border-top:2px solid rgba(255,255,255,0.3)"><img src="03.png" alt="" style="filter:brightness(0) invert(1)"><div style="font-family:'Roboto Mono',monospace;font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:2px;margin-top:12px">SYMBOL / BLUE</div></div>
+    <div class="bg-cell" style="background:var(--navy);border-top:2px solid rgba(255,255,255,0.15)"><img src="03.png" alt="" style="filter:brightness(0) invert(1)"><div style="font-family:'Roboto Mono',monospace;font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:2px;margin-top:12px">SYMBOL / NAVY</div></div>
+    <div class="bg-cell" style="background:var(--charcoal);border-top:2px solid rgba(255,255,255,0.1)"><img src="03.png" alt="" style="filter:brightness(0) invert(1)"><div style="font-family:'Roboto Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:2px;margin-top:12px">SYMBOL / BLACK</div></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S7 SLOGAN LOCKUP -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s7" style="flex-direction:column">
+  <div style="margin-bottom:36px">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">06 — Slogan Lockup</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title light">슬로건 조합형</div>
+  </div>
+  <div class="lockup-row">
+    <div class="lockup-cell">
+      <div class="lockup-ver">Ver.A — Horizontal</div>
+      <img src="01.png" alt="" style="height:100px">
+      <div class="lockup-rule"></div>
+      <div class="lockup-slogan">오늘의 발견을<br>배송합니다</div>
+    </div>
+    <div class="lockup-cell">
+      <div class="lockup-ver">Ver.B — Stacked</div>
+      <img src="02.png" alt="" style="height:140px">
+      <div class="lockup-rule"></div>
+      <div class="lockup-slogan" style="font-size:18px;letter-spacing:3px">오늘의 발견을 배송합니다</div>
+    </div>
+    <div class="lockup-cell" style="background:rgba(74,144,226,0.12);border:1px solid rgba(74,144,226,0.2)">
+      <div class="lockup-ver">Ver.C — Symbol</div>
+      <img src="03.png" alt="" style="height:120px">
+      <div class="lockup-rule"></div>
+      <div class="lockup-slogan" style="font-size:24px;font-weight:800;color:var(--sky)">잘 고른 것들의<br>백화점</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S8 DON'TS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s8" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow">07 — Usage Rules</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">로고 사용 금지 사항</div>
+  </div>
+  <div class="dont-grid">
+    <div class="dont-cell">
+      <div class="x-mark">✕</div>
+      <img src="01.png" alt="" style="opacity:0.4;filter:hue-rotate(90deg)">
+      <div class="dont-title">색상 임의 변경 금지</div>
+      <div class="dont-rule">지정된 브랜드 컬러 외 임의의 색상으로 로고를 변경하지 않습니다.</div>
+    </div>
+    <div class="dont-cell">
+      <div class="x-mark">✕</div>
+      <img src="01.png" alt="" style="transform:scaleX(1.4);transform-origin:center">
+      <div class="dont-title">비율 변형 금지</div>
+      <div class="dont-rule">로고를 가로 또는 세로 방향으로 늘리거나 압축하지 않습니다.</div>
+    </div>
+    <div class="dont-cell">
+      <div class="x-mark">✕</div>
+      <img src="01.png" alt="" style="transform:rotate(-15deg)">
+      <div class="dont-title">회전 금지</div>
+      <div class="dont-rule">로고를 기울이거나 회전시키지 않습니다. 항상 수평을 유지합니다.</div>
+    </div>
+    <div class="dont-cell" style="background:var(--beige)">
+      <div class="x-mark">✕</div>
+      <img src="01.png" alt="" style="filter:drop-shadow(0 0 8px rgba(74,144,226,0.8)) drop-shadow(0 0 16px rgba(74,144,226,0.5))">
+      <div class="dont-title">효과 추가 금지</div>
+      <div class="dont-rule">그림자, 글로우, 엠보스 등 효과를 적용하지 않습니다.</div>
+    </div>
+    <div class="dont-cell">
+      <div class="x-mark">✕</div>
+      <div style="position:relative;display:inline-block">
+        <img src="01.png" alt="">
+        <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,0,0,0.1) 0,rgba(255,0,0,0.1) 4px,transparent 4px,transparent 8px)"></div>
+      </div>
+      <div class="dont-title">패턴/텍스처 위 배치 금지</div>
+      <div class="dont-rule">가독성을 해치는 복잡한 배경 위에 로고를 배치하지 않습니다.</div>
+    </div>
+    <div class="dont-cell">
+      <div class="x-mark">✕</div>
+      <div style="display:flex;align-items:center;gap:0;margin-bottom:20px">
+        <img src="01.png" alt="" style="height:80px">
+        <img src="03.png" alt="" style="height:80px">
+      </div>
+      <div class="dont-title">다른 로고와 조합 금지</div>
+      <div class="dont-rule">다른 브랜드 로고와 임의로 조합하거나 나란히 배치하지 않습니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S9 BRAND FOUNDATION -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s9" style="flex-direction:column">
+  <div style="margin-bottom:32px">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">08 — Brand Foundation</div>
+    <div class="sky-rule"></div>
+  </div>
+  <div class="foundation-hero">
+    <em>잘 고른 것들</em>을 발견하고<br>배송하는 인터넷상사
+  </div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div class="pillar-title">발견의 기쁨</div>
+      <div class="pillar-body">페가수스는 단순한 쇼핑몰이 아닙니다. 사용자가 스스로 발견했을 때의 기쁨을 온라인 구매 경험으로 재현합니다. 바이어의 안목이 큐레이션의 시작입니다.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div class="pillar-title">동료적 신뢰</div>
+      <div class="pillar-body">전문가처럼 알고 있지만 친구처럼 말합니다. 어렵지 않고, 과하지 않으며, 정직하게. 우리는 고객의 취향 파트너입니다.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div class="pillar-title">구체적 안목</div>
+      <div class="pillar-body">모호한 '좋아요'가 아닌 "왜 좋은지"를 설명합니다. 소재, 제조사, 사용법, 보관법—구체적일수록 신뢰가 생깁니다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S10 BRAND CHARACTERS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s10" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow">09 — Brand Characters</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">브랜드 캐릭터</div>
+  </div>
+  <div class="char-grid">
+    <div class="char-card">
+      <div class="char-card-top">
+        <div class="char-avatar" style="background:var(--sky)">🏢</div>
+      </div>
+      <div class="char-card-bottom">
+        <div class="char-title-kr">CHARACTER 01</div>
+        <div class="char-name">사장</div>
+        <div class="char-name-cn">代表</div>
+        <div class="char-tags">
+          <span class="char-tag">결단력</span>
+          <span class="char-tag">안목</span>
+          <span class="char-tag">과감함</span>
+          <span class="char-tag">비전</span>
+        </div>
+      </div>
+    </div>
+    <div class="char-card">
+      <div class="char-card-top" style="background:rgba(212,175,55,0.12)">
+        <div class="char-avatar" style="background:var(--gold)">🔍</div>
+      </div>
+      <div class="char-card-bottom">
+        <div class="char-title-kr">CHARACTER 02</div>
+        <div class="char-name">수석 바이어</div>
+        <div class="char-name-cn">首席 買付</div>
+        <div class="char-tags">
+          <span class="char-tag" style="background:rgba(212,175,55,0.12);color:#9a7d1a">구체성</span>
+          <span class="char-tag" style="background:rgba(212,175,55,0.12);color:#9a7d1a">위트</span>
+          <span class="char-tag" style="background:rgba(212,175,55,0.12);color:#9a7d1a">전문성</span>
+          <span class="char-tag" style="background:rgba(212,175,55,0.12);color:#9a7d1a">신뢰</span>
+        </div>
+      </div>
+    </div>
+    <div class="char-card">
+      <div class="char-card-top" style="background:rgba(26,43,60,0.08)">
+        <div class="char-avatar" style="background:var(--navy)">📦</div>
+      </div>
+      <div class="char-card-bottom">
+        <div class="char-title-kr">CHARACTER 03</div>
+        <div class="char-name">창고장</div>
+        <div class="char-name-cn">倉庫番</div>
+        <div class="char-tags">
+          <span class="char-tag" style="background:rgba(26,43,60,0.08);color:var(--navy)">정직</span>
+          <span class="char-tag" style="background:rgba(26,43,60,0.08);color:var(--navy)">간결</span>
+          <span class="char-tag" style="background:rgba(26,43,60,0.08);color:var(--navy)">실용</span>
+          <span class="char-tag" style="background:rgba(26,43,60,0.08);color:var(--navy)">묵묵함</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S11 BRAND VOICE -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s11" style="flex-direction:column">
+  <div style="margin-bottom:36px">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">10 — Brand Voice</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title light">브랜드 보이스</div>
+  </div>
+  <div class="voice-keywords">
+    <span class="vk">발견</span>
+    <span class="vk">동료</span>
+    <span class="vk">구체</span>
+    <span class="vk">안목</span>
+    <span class="vk">위트</span>
+    <span class="vk">신뢰</span>
+    <span class="vk">간결</span>
+    <span class="vk">정직</span>
+  </div>
+  <div class="do-dont">
+    <div class="do-box do" style="flex:3">
+      <div class="do-label">DO — 이렇게 말합니다</div>
+      <div class="do-items">
+        <div class="do-item">이 가방은 베트남 다낭 현지 공방에서 손으로 엮어 만든 라탄 제품입니다.</div>
+        <div class="do-item">습기에 약하니 비 오는 날엔 천가방에 넣어 보관해 주세요.</div>
+        <div class="do-item">3번 써봤는데 어깨끈이 제일 편했어요.</div>
+      </div>
+    </div>
+    <div class="do-box dont" style="flex:3">
+      <div class="do-label">DON'T — 이렇게는 말하지 않습니다</div>
+      <div class="do-items">
+        <div class="do-item">감성이 넘치는 핫한 아이템 ✕</div>
+        <div class="do-item">당신의 일상을 업그레이드해 줄 마법 같은 제품 ✕</div>
+        <div class="do-item">지금 바로 구매하지 않으면 후회합니다! ✕</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S12 SLOGANS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s12" style="flex-direction:column">
+  <div style="margin-bottom:0">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">11 — Slogans &amp; Copy</div>
+    <div class="sky-rule"></div>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="slogan-main">오늘의 <span>발견</span>을<br>배송합니다</div>
+    <div class="slogan-sub">잘 고른 것들의 백화점</div>
+  </div>
+  <div class="copy-grid">
+    <div class="copy-cell">
+      <div class="copy-context">Product Card</div>
+      <div class="copy-text">"이건 꼭 한 번 써보셔야 해요."</div>
+    </div>
+    <div class="copy-cell">
+      <div class="copy-context">Order Confirm</div>
+      <div class="copy-text">"좋은 선택이에요. 이미 가는 중입니다."</div>
+    </div>
+    <div class="copy-cell">
+      <div class="copy-context">Empty State</div>
+      <div class="copy-text">"아직 발견하지 못한 것들이 기다리고 있어요."</div>
+    </div>
+    <div class="copy-cell">
+      <div class="copy-context">Error Page</div>
+      <div class="copy-text">"잠깐 길을 잃었어요. 처음부터 다시 볼까요?"</div>
+    </div>
+    <div class="copy-cell">
+      <div class="copy-context">Newsletter</div>
+      <div class="copy-text">"이번 주에 바이어가 골라온 것들입니다."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S13 COLOR SYSTEM -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s13" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow">12 — Color System</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">컬러 시스템</div>
+  </div>
+  <div class="swatch-row">
+    <div class="swatch-main" style="display:flex;flex-direction:column;gap:4px">
+      <div class="swatch-block sky" style="flex:2">
+        <div class="swatch-role">Primary</div>
+        <div class="swatch-name">Sky Blue</div>
+        <div class="swatch-hex">#4A90E2 · RGB 74,144,226</div>
+      </div>
+      <div class="swatch-block gold">
+        <div class="swatch-role">Accent</div>
+        <div class="swatch-name" style="color:var(--charcoal)">Warm Gold</div>
+        <div class="swatch-hex" style="color:rgba(26,26,26,0.6)">#D4AF37 · RGB 212,175,55</div>
+      </div>
+      <div class="swatch-block navy">
+        <div class="swatch-role">Supporting</div>
+        <div class="swatch-name">Deep Navy</div>
+        <div class="swatch-hex">#1A2B3C · RGB 26,43,60</div>
+      </div>
+    </div>
+    <div class="swatch-side">
+      <div style="display:flex;gap:4px;flex:1">
+        <div class="swatch-block warm" style="flex:1">
+          <div class="swatch-role dark">Background A</div>
+          <div class="swatch-name dark" style="font-size:22px">Warm White</div>
+          <div class="swatch-hex dark">#FAF7F2</div>
+        </div>
+        <div class="swatch-block beige" style="flex:1">
+          <div class="swatch-role dark">Background B</div>
+          <div class="swatch-name dark" style="font-size:22px">Soft Beige</div>
+          <div class="swatch-hex dark">#E8DFD0</div>
+        </div>
+        <div class="swatch-block charcoal" style="flex:1">
+          <div class="swatch-role">Text</div>
+          <div class="swatch-name" style="font-size:22px">Charcoal</div>
+          <div class="swatch-hex">#1A1A1A</div>
+        </div>
+      </div>
+      <div class="usage-bar" style="flex:none;height:auto;padding:32px 36px">
+        <div style="font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:24px">컬러 사용 비율 가이드</div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span class="usage-label">Sky Blue (Primary)</span>
+              <span style="font-family:'Roboto Mono',monospace;font-size:13px;color:var(--sky)">20%</span>
+            </div>
+            <div class="usage-track"><div class="usage-fill" style="width:20%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span class="usage-label">Warm White / Beige (BG)</span>
+              <span style="font-family:'Roboto Mono',monospace;font-size:13px;color:var(--stone)">60%</span>
+            </div>
+            <div class="usage-track"><div class="usage-fill" style="width:60%;background:var(--beige)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span class="usage-label">Charcoal / Navy (Text)</span>
+              <span style="font-family:'Roboto Mono',monospace;font-size:13px;color:var(--stone)">15%</span>
+            </div>
+            <div class="usage-track"><div class="usage-fill" style="width:15%;background:var(--charcoal)"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span class="usage-label">Warm Gold (Accent)</span>
+              <span style="font-family:'Roboto Mono',monospace;font-size:13px;color:var(--gold)">5%</span>
+            </div>
+            <div class="usage-track"><div class="usage-fill" style="width:5%;background:var(--gold)"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S14 TYPOGRAPHY -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s14" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow">13 — Typography</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">타이포그래피</div>
+  </div>
+  <div class="type-layout">
+    <div class="type-col">
+      <div class="type-specimen" style="flex:2">
+        <div>
+          <div class="label" style="margin-bottom:12px">SUIT — Primary Typeface</div>
+          <div class="type-big">Aa</div>
+          <div class="type-sample-kr" style="margin-top:16px">페가수스<br>인터넷상사</div>
+        </div>
+        <div class="type-meta">
+          <span class="meta">SUIT 400/700/900</span>
+          <span style="width:1px;height:20px;background:var(--beige);display:inline-block;margin:0 16px"></span>
+          <span class="meta">한국어 + Latin</span>
+        </div>
+      </div>
+      <div class="type-specimen dark">
+        <div>
+          <div class="label" style="margin-bottom:12px;color:rgba(74,144,226,0.8)">Roboto Mono — Meta / Code</div>
+          <div class="type-big light" style="font-family:'Roboto Mono',monospace;font-size:80px">Aa</div>
+          <div style="font-family:'Roboto Mono',monospace;font-size:28px;color:rgba(255,255,255,0.5);margin-top:8px;letter-spacing:2px">0123456789</div>
+        </div>
+        <div class="type-meta" style="color:rgba(255,255,255,0.35)">Roboto Mono 400/500 · Metadata, SKU, Price</div>
+      </div>
+    </div>
+    <div class="type-scale">
+      <div class="label" style="margin-bottom:20px">TYPE SCALE</div>
+      <div class="scale-row">
+        <span class="scale-size">96px / 900</span>
+        <span class="scale-sample" style="font-size:48px">Display</span>
+        <span class="scale-use">커버·히어로</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-size">64px / 800</span>
+        <span class="scale-sample" style="font-size:40px">Title</span>
+        <span class="scale-use">슬라이드 제목</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-size">36px / 700</span>
+        <span class="scale-sample" style="font-size:32px">Heading</span>
+        <span class="scale-use">섹션 제목</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-size">24px / 600</span>
+        <span class="scale-sample" style="font-size:24px">Sub-heading</span>
+        <span class="scale-use">카드 제목</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-size">19px / 400</span>
+        <span class="scale-sample" style="font-size:19px">Body — 본문 텍스트는 이 사이즈를 기본으로</span>
+        <span class="scale-use">본문</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-size">14px / 500</span>
+        <span class="scale-sample" style="font-size:14px;font-family:'Roboto Mono',monospace;letter-spacing:2px">CAPTION / META</span>
+        <span class="scale-use">캡션·레이블</span>
+      </div>
+      <div class="scale-row" style="border:none">
+        <span class="scale-size">11px / 500</span>
+        <span class="scale-sample" style="font-size:11px;font-family:'Roboto Mono',monospace;letter-spacing:4px;color:var(--sky)">EYEBROW LABEL</span>
+        <span class="scale-use">아이브로우</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S15 GRID + COMPONENTS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s15" style="flex-direction:column">
+  <div style="margin-bottom:36px">
+    <div class="eyebrow">14 — Grid &amp; Components</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">레이아웃 &amp; 컴포넌트</div>
+  </div>
+  <div class="layout-row">
+    <div class="grid-vis">
+      <div style="position:absolute;top:24px;left:40px" class="label">12 COLUMN GRID · 24px GUTTER</div>
+      <!-- 12 columns visual -->
+      <div style="position:absolute;inset:64px 40px 40px;display:flex;gap:0">
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-left:1px solid rgba(74,144,226,0.2);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.1)"></div>
+        <div style="flex:1;background:rgba(74,144,226,0.07);border-right:1px solid rgba(74,144,226,0.2)"></div>
+      </div>
+      <!-- Spacing tokens -->
+      <div style="position:absolute;bottom:40px;left:40px;right:40px;display:flex;gap:8px;align-items:flex-end">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:8px;height:8px;background:var(--sky)"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">4px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:12px;height:12px;background:var(--sky)"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">8px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:16px;height:16px;background:var(--sky)"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">12px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:24px;height:24px;background:var(--sky)"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">16px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:32px;height:32px;background:var(--sky);opacity:0.8"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">24px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:48px;height:48px;background:var(--sky);opacity:0.6"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">32px</span>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          <div style="width:64px;height:64px;background:var(--sky);opacity:0.4"></div>
+          <span style="font-family:'Roboto Mono',monospace;font-size:9px;color:var(--sky)">48px</span>
+        </div>
+      </div>
+    </div>
+    <div class="comp-col">
+      <div class="comp-section">
+        <div class="comp-title">Buttons</div>
+        <div class="comp-row">
+          <div class="btn-primary">구매하기</div>
+          <div class="btn-outline">찜하기</div>
+          <div class="btn-text">더 보기 →</div>
+        </div>
+        <div class="comp-row">
+          <div class="btn-primary" style="background:var(--navy)">문의하기</div>
+          <div class="btn-outline" style="border-color:var(--stone);color:var(--stone)">취소</div>
+        </div>
+      </div>
+      <div class="comp-section">
+        <div class="comp-title">Tags &amp; Labels</div>
+        <div class="comp-row">
+          <div class="tag-item">큐레이션</div>
+          <div class="tag-item">신상품</div>
+          <div class="tag-item">한정수량</div>
+          <div class="tag-item" style="background:rgba(212,175,55,0.12);color:#9a7d1a">베스트셀러</div>
+          <div class="tag-item" style="background:rgba(26,43,60,0.08);color:var(--navy)">시즌특가</div>
+        </div>
+      </div>
+      <div class="comp-section">
+        <div class="comp-title">Product Card</div>
+        <div class="comp-row" style="align-items:flex-start">
+          <div class="card-ex">
+            <div class="card-ex-img">🛍</div>
+            <div class="card-ex-body">
+              <div style="font-weight:700;margin-bottom:4px">제품명</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:var(--sky)">₩ 32,000</div>
+            </div>
+          </div>
+          <div class="card-ex" style="background:#fff">
+            <div class="card-ex-img" style="background:var(--navy)">⭐</div>
+            <div class="card-ex-body">
+              <div style="font-weight:700;margin-bottom:4px">추천 제품</div>
+              <div style="font-family:'Roboto Mono',monospace;font-size:11px;color:var(--sky)">₩ 58,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S16 CHANNELS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s16" style="flex-direction:column">
+  <div style="margin-bottom:40px">
+    <div class="eyebrow" style="color:rgba(74,144,226,0.8)">15 — Channels</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title light">채널 별 적용</div>
+  </div>
+  <div class="channel-grid">
+    <div class="ch-cell web">
+      <div class="ch-icon">🌐</div>
+      <div class="ch-name">웹 스토어</div>
+      <div class="ch-desc">큐레이션 중심의 상품 경험. 바이어 코멘트와 제품 스토리가 구매 결정의 핵심입니다.</div>
+      <div class="ch-rules">
+        <div class="ch-rule-item">헤더: Sky Blue 포인트 + Warm White 배경</div>
+        <div class="ch-rule-item">상품 카드: 사진 + 바이어 코멘트 필수</div>
+        <div class="ch-rule-item">CTA 버튼: Sky Blue Primary</div>
+        <div class="ch-rule-item">폰트: SUIT 본문 19px 이상</div>
+      </div>
+    </div>
+    <div class="ch-cell curate">
+      <div class="ch-icon">📰</div>
+      <div class="ch-name">큐레이션 콘텐츠</div>
+      <div class="ch-desc">주간 발견 뉴스레터, 블로그, 시즌 컬렉션. 편집장의 시선으로 쓰는 이야기.</div>
+      <div class="ch-rules" style="">
+        <div class="ch-rule-item" style="border-left-color:var(--gold)">제목: 구체적 사실 + 감각적 표현 조합</div>
+        <div class="ch-rule-item" style="border-left-color:var(--gold)">사진: 자연광, 생활 맥락, 3:2 비율 권장</div>
+        <div class="ch-rule-item" style="border-left-color:var(--gold)">길이: 제품당 150–250자 코멘트</div>
+        <div class="ch-rule-item" style="border-left-color:var(--gold)">색조: Warm White / Beige 배경 기조</div>
+      </div>
+    </div>
+    <div class="ch-cell social">
+      <div class="ch-icon">📱</div>
+      <div class="ch-name">인스타그램 / SNS</div>
+      <div class="ch-desc">발견의 순간을 시각화합니다. 제품 사진보다 '쓰는 장면'을 포착하는 것을 우선합니다.</div>
+      <div class="ch-rules">
+        <div class="ch-rule-item">피드: 정방형 1:1, 일관된 색감 톤</div>
+        <div class="ch-rule-item">스토리: 텍스트 포인트 Sky Blue</div>
+        <div class="ch-rule-item">캡션: 2–3문장, 해시태그 최소화</div>
+        <div class="ch-rule-item">로고: 우하단 심볼 단독 사용</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- S17 REFERENCES -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="slide" id="s17" style="flex-direction:column">
+  <div style="margin-bottom:36px">
+    <div class="eyebrow">16 — Design References</div>
+    <div class="sky-rule"></div>
+    <div class="slide-title">디자인 레퍼런스</div>
+  </div>
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Web · Store</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">큐레이션</span><span class="ref-kw">타이포중심</span><span class="ref-kw">여백</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Editorial</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">그리드</span><span class="ref-kw">모노톤</span><span class="ref-kw">정갈함</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Instagram</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">라이프스타일</span><span class="ref-kw">자연광</span><span class="ref-kw">감도</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Branding</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">미니멀</span><span class="ref-kw">서체활용</span><span class="ref-kw">컬러포인트</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Newsletter</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">편집디자인</span><span class="ref-kw">스토리텔링</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Product Page</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">상세페이지</span><span class="ref-kw">정보구조</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Packaging</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">패키지</span><span class="ref-kw">질감</span><span class="ref-kw">오프라인</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-img"><span class="ref-img-text">SCREENSHOT PLACEHOLDER</span></div>
+      <div class="ref-body">
+        <div class="ref-source">Typography</div>
+        <div class="ref-keywords">
+          <span class="ref-kw">자간</span><span class="ref-kw">행간</span><span class="ref-kw">한영조합</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<nav class="nav">
+  <button onclick="prev()">← PREV</button>
+  <div class="pager" id="pg">1 / 17</div>
+  <button onclick="next()">NEXT →</button>
+</nav>
+
+<script>
+let c=1,t=17;
+function show(n){
+  if(n<1||n>t)return;
+  document.querySelector('#s'+c).classList.remove('active');
+  c=n;
+  document.querySelector('#s'+c).classList.add('active');
+  document.getElementById('pg').textContent=c+' / '+t;
+  document.getElementById('pb').style.width=(c/t*100)+'%';
+}
+function next(){if(c<t)show(c+1);}
+function prev(){if(c>1)show(c-1);}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')next();
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')prev();
+});
+show(1);
+</script>
+</body>
+</html>
